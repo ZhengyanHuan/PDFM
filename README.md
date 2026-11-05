@@ -2,6 +2,8 @@
 
 Code for **Primal-Dual Flow Matching for Sample-Wise Constrained Generation**, by **Zhengyan Huan, Peter Y. Lu, and Shuchin Aeron**, accepted at **NeurIPS 2026**.
 
+[Preprint (PDF)](https://arxiv.org/pdf/2610.12699) | [Poster (PDF)](PDFM_poster.pdf)
+
 ## Paper and method
 
 The paper studies generative modeling with sample-wise constraints: given a training distribution and a user-specified target constraint satisfaction rate, the goal is to generate feasible samples while preserving distributional fidelity. Constraints are specified through a binary membership oracle that determines whether a sample is feasible. No differentiable constraint distance, projection, or convexity assumption is required by the practical method.
