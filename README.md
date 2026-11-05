@@ -1,14 +1,16 @@
 # Primal-Dual Flow Matching for Sample-Wise Constrained Generation
 
-Code for **Primal-Dual Flow Matching for Sample-Wise Constrained Generation**, by **Zhengyan Huan, Peter Y. Lu, and Shuchin Aeron**, accepted at **NeurIPS 2026**.
-
-[Preprint (PDF)](https://arxiv.org/pdf/2610.12699) | [Poster (PDF)](PDFM_poster.pdf)
+Code for **[Primal-Dual Flow Matching for Sample-Wise Constrained Generation](https://arxiv.org/pdf/2610.12699)**, by **Zhengyan Huan, Peter Y. Lu, and Shuchin Aeron**, accepted at **NeurIPS 2026**.
 
 ## Paper and method
 
 The paper studies generative modeling with sample-wise constraints: given a training distribution and a user-specified target constraint satisfaction rate, the goal is to generate feasible samples while preserving distributional fidelity. Constraints are specified through a binary membership oracle that determines whether a sample is feasible. No differentiable constraint distance, projection, or convexity assumption is required by the practical method.
 
 **Primal-Dual Flow Matching (PDFM)** combines flow matching with primal-dual optimization. A learned feasibility predictor turns binary oracle feedback into differentiable guidance for the velocity field, while a dual variable adapts the weight of the constraint term according to the gap between the measured satisfaction rate and the target. The paper develops constraint satisfaction guarantees under stated assumptions and evaluates the practical method on synthetic, PDE, fingerprint, and molecule generation tasks.
+
+[![PDFM training algorithm](pdfm-training.png)](pdfm-training.pdf)
+
+[Download algorithm diagram (PDF)](pdfm-training.pdf)
 
 ## Experiments
 
@@ -22,4 +24,8 @@ Each folder corresponds to an experiment in the paper. The main notebooks are li
 | Appendix H.4 | **Fingerprint generation.** Generate SOCOFing fingerprint images with a ridge-connectivity constraint. The oracle thresholds and skeletonizes each image, then checks its number of connected ridge components. | [main_H4.ipynb](Sec_H4/main_H4.ipynb) |
 | Appendix H.5 | **3-D molecule generation.** Generate QM9 molecules with a molecule-stability constraint: all atoms must satisfy valency rules after bond inference. Evaluation considers molecule stability and negative log-likelihood. | [main_H5.ipynb](Sec_H5/main_H5.ipynb) |
 
+## Poster
 
+[![PDFM poster](PDFM_poster.png)](PDFM_poster.pdf)
+
+[Download poster (PDF)](PDFM_poster.pdf)
